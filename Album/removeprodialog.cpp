@@ -1,0 +1,21 @@
+#include "removeprodialog.h"
+#include "ui_removeprodialog.h"
+
+RemoveProDialog::RemoveProDialog(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::RemoveProDialog)
+{
+    ui->setupUi(this);
+}
+
+RemoveProDialog::~RemoveProDialog()
+{
+    delete ui;
+}
+
+//返回是否勾选了删除文件
+bool RemoveProDialog::IsRemoved()
+{
+    bool bChecked=ui->checkBox->isChecked();
+    return bChecked;
+}
